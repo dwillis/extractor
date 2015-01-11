@@ -1,5 +1,18 @@
+<style>
+pre {
+  height: auto;
+  max-height: 200px;
+  overflow: auto;
+  background-color: #eeeeee;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  white-space: pre !important;
+  }​
+</style>
 {% extends "bootstrap/base.html" %}
 {% block title %}Extractor!{% endblock %}
+
+{% block body %}
 
 {% block content %}
 <div class="navbar navbar-inverse navbar-fixed-top">
@@ -34,7 +47,8 @@
                 <button type="submit" class="btn btn-default">Submit</button>
               </div>
             </div>
-          </form>
+          </div>
+        </form>
 
       <h3>Text from {{ url }}:</h3>
 
@@ -42,9 +56,10 @@
 
       <pre class="pre-scrollable">{{ text }}</pre>
 
-      </div>
-
 
       </div>
     </div>
+  </div>
+{% endblock %}
+
 {% endblock %}
