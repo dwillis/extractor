@@ -1,0 +1,16 @@
+{% extends "bootstrap/base.html" %}
+{% block title %}Extractor!{% endblock %}
+
+{% block content %}
+<div id="container">
+  <div class="title">
+    <h1>Extract Text from URL</h1>
+  </div>
+  <div id="content">
+    <form method="post" action="{{ url_for('result') }}">
+      <label for="url">Please enter URL:</label>
+      <input type="text" name="url" /><br />
+      <input type="submit" />
+    </form>
+  </div>
+{% endblock %}
