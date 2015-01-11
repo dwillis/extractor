@@ -11,7 +11,10 @@ def index():
 
 @app.route('/result/', methods=['GET','POST'])
 def result():
-    url = request.form['url']
+    if request.form:
+        url = request.form['url']
+    else:
+        url = request.args.get('url')
     tree = etv2.extract(url)
     text = tree.get_text()
     return jsonify(url=url, text=text)
