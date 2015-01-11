@@ -9,15 +9,22 @@ Bootstrap(app)
 def index():
     return render_template('index.html')
 
-@app.route('/result/', methods=['GET','POST'])
+@app.route('/result/', methods=['POST'])
 def result():
+    url = request.form['url']
+    tree = etv2.extract(url)
+    text = tree.get_text()
+    return render_template('result.html', url=unicode(url), text=text)
+
+@app.route('/api/', methods=['GET','POST'])
+def api():
     if request.form:
         url = request.form['url']
     else:
         url = request.args.get('url')
     tree = etv2.extract(url)
     text = tree.get_text()
-    return jsonify(url=url, text=text)
+    return jsonify(url=unicode(url), text=text)
 
 if __name__ == '__main__':
     app.run()
