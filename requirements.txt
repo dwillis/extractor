@@ -9,7 +9,7 @@ Flask-Reggie==0.0.2
 gunicorn==19.7.1
 idna==2.6
 itsdangerous==0.24
-Jinja2==2.9.6
+Jinja2==2.11.3
 libextract==0.0.12
 lxml==4.1.0
 MarkupSafe==1.0
